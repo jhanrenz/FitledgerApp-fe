@@ -1,6 +1,12 @@
 {
   "version": 3,
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    { "source": "/old-path", "destination": "/new-path" }
+  ],
+  "redirects": [
+    { "source": "/old-page", "destination": "/", "permanent": true }
+  ],
+  "headers": [
+    { "source": "/(.*)", "headers": [{ "key": "X-Custom", "value": "Hello" }] }
   ]
 }
